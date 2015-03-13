@@ -5,8 +5,8 @@
   (c puf-c))
 
 (define (create n)
-  (puf (parray-allocate n 0)
-       (parray-init n (lambda (i) i))))
+  (puf (parray-init n (lambda (i) i))
+       (parray-allocate n 0)))
 
 (define (find h x)
   (define (find-aux f i)
