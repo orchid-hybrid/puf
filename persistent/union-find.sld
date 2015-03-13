@@ -4,6 +4,6 @@
           (srfi 111)
           (persistent array))
 
-  (export )
+  (export create union find)
 
   (include "union-find.scm"))

@@ -4,6 +4,10 @@
   (father puf-father puf-set-father!)
   (c puf-c))
 
+(define (create n)
+  (puf (parray-allocate n 0)
+       (parray-init n (lambda (i) i))))
+
 (define (find h x)
   (define (find-aux f i)
     (let ((fi (parray-get f i)))

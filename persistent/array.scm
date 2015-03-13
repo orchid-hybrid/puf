@@ -13,6 +13,14 @@
 (define (parray-allocate size default)
   (box (make-vector size default)))
 
+(define (parray-init size fill)
+  (define (build-vector)
+    (do ((vec (make-vector size))
+         (i 0 (+ i 1)))
+        ((= i size) vec)
+      (vector-set! vec i (fill i))))
+  (box (build-vector)))
+
 (define (parray-reroot t)
   (let ((k (unbox t)))
     (cond ((vector? k) '())
