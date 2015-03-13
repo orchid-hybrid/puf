@@ -4,6 +4,7 @@
           (srfi 111))
 
   (export parray-allocate
+          parray-reroot
           parray-get
           parray-set)
 
